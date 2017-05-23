@@ -1,9 +1,9 @@
 from utils import *
 from config import *
-from makes import *
-from models import *
-from styles import *
-from prices import *
+from makes import list_all_makes
+from models import list_all_models, save_model_images
+from styles import list_all_styles
+from prices import retrieve_prices_by_compare
 import os
 
 def main():
