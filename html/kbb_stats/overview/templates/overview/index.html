@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1> KBB Car Prices </h1>
+        </div>
+
+        <div class="container">
+            <h3> select make: </h3>
+            <form method="POST">{% csrf_token %}
+                <select name="select_make" id="select_make">
+                    {% if all_makes %}
+                        {% for make in all_makes %}
+                            <option value="{{make}}">{{make}}</option>
+                        {% endfor %}
+                    {% else %}
+                        <option value="N/A">N/A</option>
+                    {% endif %}
+                </select>
+
+                <input type="submit" value="Go">
+            </form>
+        </div>
+    </body>
+</html>
